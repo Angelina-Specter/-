@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>地图选取 · 飞途FlyWay搜救平台</title>
+  <link rel="stylesheet" href="style-new.css" />
+  <script defer src="nav.js"></script>
+  <script src="https://api.map.baidu.com/api?v=1.0&type=webgl&ak=eixNunc1MkU30HNkDVcDz7ILhOE13cKk"></script>
+  <script defer src="map-select.js"></script>
+</head>
+<body data-page="map-select">
+  <aside class="sidebar">
+    <div class="brand">飞途FlyWay</div>
+    <nav class="nav">
+      <a class="nav-link" href="index.html" data-page="home"><span class="icon">🏠</span><span class="text">首页</span></a>
+      <a class="nav-link" href="map-select.html" data-page="map-select"><span class="icon">🧭</span><span class="text">地图选取</span></a>
+      <a class="nav-link" href="map-process.html" data-page="map-process"><span class="icon">🧰</span><span class="text">地图处理</span></a>
+      <button class="nav-group" type="button" data-group="algo">
+        <span class="icon">🧮</span><span class="text">算法选择</span>
+        <span class="chevron"></span>
+      </button>
+      <div class="nav-sublist" data-parent="algo">
+        <a class="nav-link sub" href="algo-uav.html" data-page="algo-uav"><span class="icon">📄</span><span class="text">无人机避障</span></a>
+        <a class="nav-link sub" href="algo-aftershock.html" data-page="algo-aftershock"><span class="icon">📄</span><span class="text">余震模拟</span></a>
+        <a class="nav-link sub" href="algo-extended.html" data-page="algo-extended"><span class="icon">📄</span><span class="text">扩展邻域搜索</span></a>
+      </div>
+    </nav>
+  </aside>
+  <main class="content">
+    <header class="page-header">
+      <div class="topbar">
+        <h1 class="title">地图选取</h1>
+        <div class="meta"><span class="pill">v1.2.2</span></div>
+      </div>
+    </header>
+    <section class="page-body">
+      <div class="card">
+        <div class="toolbar">
+          <div class="search-group">
+            <input id="placeInput" type="text" placeholder="(地点搜索栏)" />
+            <button id="btnSearch" class="btn btn-secondary">🔍</button>
+          </div>
+          <div class="btn-group">
+            <button id="btnSelectArea" class="btn btn-secondary">选择区域</button>
+            <button id="btnConfirm" class="btn btn-primary">确认</button>
+            <button id="btnCancel" class="btn btn-tertiary">重置</button>
+          </div>
+          <div class="toolbar-right">
+            <a class="btn btn-primary" href="map-process.html">前往地图处理</a>
+          </div>
+        </div>
+
+        <div class="map-wrap">
+          <div id="bmap" class="bmap"></div>
+          <canvas id="selLayer" class="sel-layer"></canvas>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

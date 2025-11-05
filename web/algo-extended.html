@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>扩展邻域搜索 · 飞途FlyWay搜救平台</title>
+  <link rel="stylesheet" href="style-new.css" />
+  <script defer src="nav.js"></script>
+  <script defer src="algo-extended.js"></script>
+</head>
+<body data-page="algo-extended">
+  <aside class="sidebar">
+    <div class="brand">飞途FlyWay</div>
+    <nav class="nav">
+      <a class="nav-link" href="index.html" data-page="home"><span class="icon">🏠</span><span class="text">首页</span></a>
+      <a class="nav-link" href="map-select.html" data-page="map-select"><span class="icon">🧭</span><span class="text">地图选取</span></a>
+      <a class="nav-link" href="map-process.html" data-page="map-process"><span class="icon">🧰</span><span class="text">地图处理</span></a>
+      <button class="nav-group" type="button" data-group="algo">
+        <span class="icon">🧮</span><span class="text">算法选择</span>
+        <span class="chevron"></span>
+      </button>
+      <div class="nav-sublist" data-parent="algo">
+        <a class="nav-link sub" href="algo-uav.html" data-page="algo-uav"><span class="icon">📄</span><span class="text">无人机避障</span></a>
+        <a class="nav-link sub" href="algo-aftershock.html" data-page="algo-aftershock"><span class="icon">📄</span><span class="text">余震模拟</span></a>
+        <a class="nav-link sub" href="algo-extended.html" data-page="algo-extended"><span class="icon">📄</span><span class="text">扩展邻域搜索</span></a>
+      </div>
+    </nav>
+  </aside>
+  <main class="content">
+    <header class="page-header">
+      <div class="topbar">
+        <h1 class="title">扩展邻域搜索</h1>
+        <div class="meta"><span class="pill">v1.2.2</span></div>
+      </div>
+    </header>
+    <section class="page-body">
+      <div class="card process-wrap">
+        <div class="process-left">
+          <div class="form-row split">
+            <button id="runBtn" class="btn btn-primary fit">执行</button>
+            <button id="clearBtn" class="btn btn-tertiary fit">清除输出</button>
+          </div>
+          <div class="form-row">
+            <button id="exportBtn" class="btn btn-secondary" style="width:100%">导出结果</button>
+          </div>
+        </div>
+        <div class="process-right">
+          <div class="grid-stage">
+            <canvas id="extGrid" width="640" height="640"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

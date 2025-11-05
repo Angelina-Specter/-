@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>余震模拟 · 飞途FlyWay搜救平台</title>
+  <link rel="stylesheet" href="style-new.css" />
+  <script defer src="nav.js"></script>
+  <script defer src="algo-aftershock.js"></script>
+</head>
+<body data-page="algo-aftershock">
+  <aside class="sidebar">
+    <div class="brand">飞途FlyWay</div>
+    <nav class="nav">
+      <a class="nav-link" href="index.html" data-page="home"><span class="icon">🏠</span><span class="text">首页</span></a>
+      <a class="nav-link" href="map-select.html" data-page="map-select"><span class="icon">🧭</span><span class="text">地图选取</span></a>
+      <a class="nav-link" href="map-process.html" data-page="map-process"><span class="icon">🧰</span><span class="text">地图处理</span></a>
+      <button class="nav-group" type="button" data-group="algo">
+        <span class="icon">🧮</span><span class="text">算法选择</span>
+        <span class="chevron"></span>
+      </button>
+      <div class="nav-sublist" data-parent="algo">
+        <a class="nav-link sub" href="algo-uav.html" data-page="algo-uav"><span class="icon">📄</span><span class="text">无人机避障</span></a>
+        <a class="nav-link sub" href="algo-aftershock.html" data-page="algo-aftershock"><span class="icon">📄</span><span class="text">余震模拟</span></a>
+        <a class="nav-link sub" href="algo-extended.html" data-page="algo-extended"><span class="icon">📄</span><span class="text">扩展邻域搜索</span></a>
+      </div>
+    </nav>
+  </aside>
+  <main class="content">
+      <header class="page-header">
+        <div class="topbar">
+          <h1 class="title">余震模拟</h1>
+          <div class="meta"><span class="pill">v1.2.2</span></div>
+        </div>
+      </header>
+    <section class="page-body">
+      <div class="card process-wrap">
+        <div class="process-left">
+          <div class="form-row">
+            <label>算法</label>
+            <div class="row-inline">
+              <select id="algoSel" style="width:100%">
+                <option value="astar">A*</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <label>余震频率: <b><span id="intervalTicksVal">0.3</span></b></label>
+            <input id="intervalTicks" type="range" min="1" max="10" step="1" value="3" />
+          </div>
+          <div class="form-row">
+            <label>余震烈度: <b><span id="severityVal">0.15</span></b></label>
+            <input id="severity" type="range" min="5" max="50" step="1" value="15" />
+          </div>
+          <div class="form-row">
+            <label>步进间隔: <b><span id="stepDelayVal">150</span></b></label>
+            <input id="stepDelay" type="range" min="50" max="500" step="10" value="150" />
+          </div>
+          <div class="form-row split">
+            <button id="startBtn" class="btn btn-primary fit">开始</button>
+            <button id="pauseBtn" class="btn btn-tertiary fit">暂停</button>
+          </div>
+          <div class="form-row">
+            <button id="resetBtn" class="btn btn-secondary" style="width:100%">重置</button>
+          </div>
+          <div class="form-row">
+            <div id="statusLine" class="card" style="font-size:12px;color:#4b5563;">
+              状态：待机
+            </div>
+          </div>
+        </div>
+        <div class="process-right">
+          <div class="grid-stage">
+            <canvas id="simGrid" width="640" height="640"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

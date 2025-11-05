@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>首页 · 飞途FlyWay搜救平台</title>
+  <link rel="stylesheet" href="style-new.css" />
+  <script defer src="nav.js"></script>
+</head>
+<body data-page="home">
+  <aside class="sidebar">
+    <div class="brand">飞途FlyWay</div>
+    <nav class="nav">
+      <a class="nav-link" href="index.html" data-page="home"><span class="icon">🏠</span><span class="text">首页</span></a>
+      <a class="nav-link" href="map-select.html" data-page="map-select"><span class="icon">🧭</span><span class="text">地图选取</span></a>
+      <a class="nav-link" href="map-process.html" data-page="map-process"><span class="icon">🧰</span><span class="text">地图处理</span></a>
+      <button class="nav-group" type="button" data-group="algo">
+        <span class="icon">🧮</span><span class="text">算法选择</span>
+        <span class="chevron"></span>
+      </button>
+      <div class="nav-sublist" data-parent="algo">
+        <a class="nav-link sub" href="algo-uav.html" data-page="algo-uav"><span class="icon">📄</span><span class="text">无人机避障</span></a>
+        <a class="nav-link sub" href="algo-aftershock.html" data-page="algo-aftershock"><span class="icon">📄</span><span class="text">余震模拟</span></a>
+        <a class="nav-link sub" href="algo-extended.html" data-page="algo-extended"><span class="icon">📄</span><span class="text">扩展邻域搜索</span></a>
+      </div>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <header class="page-header">
+      <div class="topbar">
+        <h1 class="title">坍塌迷宫搜救平台</h1>
+        <div class="meta">
+          <span class="pill">v1.2.2</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="page-body">
+      <section class="hero">
+        <h1>从地图到救援路径，一站式规划</h1>
+  <p class="subtitle">选择区域 → 栅格化 → 设置安全代价 → 运行 Dijkstra / A*，快速获得更安全、更高效的救援路线。</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="map-select.html">前往地图选取</a>
+        </div>
+      </section>
+
+      <section class="features">
+        <h2 class="section-title">平台功能</h2>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="icon">🗺️</div>
+            <h3>地图选取</h3>
+            <p>嵌入百度地图，支持搜索地点，实时定位，框选目标区域，为后续处理提供高质量底图。</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🧩</div>
+            <h3>智能栅格化</h3>
+            <p>将选定的区域转换为 0/1 栅格，图像识别障碍和通路，所见即所得。</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🛡️</div>
+            <h3>安全代价图</h3>
+            <p>依据 8 邻域障碍密度构建成本图，优先选择更安全的通行路线。</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🧠</div>
+            <h3>多算法规划</h3>
+            <p>内置递归算法和启发式算法，直观对比步数与耗时，快速选型。</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">✍️</div>
+            <h3>交互编辑</h3>
+            <p>点击切换障碍，实时更新路径与可视化层，调参更顺手。</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🖼️</div>
+            <h3>可视化与导出</h3>
+            <p>多层 Canvas 叠加展示，支持导出 PNG 以便汇报与归档。</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🌋</div>
+            <h3>余震仿真</h3>
+            <p>模拟余震导致的格子损坏并触发路径重规划，支持步进执行与自动运行，能在仿真中评估路径稳健性。</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">⚙️</div>
+            <h3>扩展邻域算法</h3>
+            <p>扩展步进邻域到 5 × 5 范围，行动方向更多元，可寻找更短的直线段路径并在渲染时保持安全性。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="steps">
+        <h2 class="section-title">三步上手</h2>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-index">1</div>
+            <h3>地图选取</h3>
+            <p>定位并框选目标区域，确定分析范围。</p>
+          </div>
+          <div class="step-card">
+            <div class="step-index">2</div>
+            <h3>地图处理</h3>
+            <p>生成栅格、编辑障碍、开启安全代价图层。</p>
+          </div>
+          <div class="step-card">
+            <div class="step-index">3</div>
+            <h3>算法选择</h3>
+            <p>运行并对比多种路径规划算法，获取结果。</p>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
